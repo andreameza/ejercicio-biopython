@@ -7,14 +7,14 @@ def summarize_contents(filename):
 		type_file= "fasta"
 	record = list(SeqIO.parse(filename, type_file))
 	#se crea el diccionario
-	diccionario = {}
-	diccionario['File:'] = listaOs[1]
-	diccionario['Path:'] = listaOs[0]
-	diccionario['Num_records:'] = len(record)
+	d = {}
+	d['File:'] = listaOs[1]
+	d['Path:'] = listaOs[0]
+	d['Num_records:'] = len(record)
 	#diccionario con listas
-	diccionario['Names:'] = []
-	diccionario['IDs:'] = []
-	diccionario['Descriptions'] = []
+	d['Names:'] = []
+	d['IDs:'] = []
+	d['Descriptions'] = []
 	#records
 	for seq_rcd in SeqIO.parse(filename,type_file):
 		d['Names:'].append(seq_rcd.name)
